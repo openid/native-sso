@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<?xml-stylesheet type='text/xsl' href='http://xml2rfc.tools.ietf.org/authoring/rfc2629.xslt' ?>
-<!DOCTYPE rfc PUBLIC "-//IETF//DTD RFC 2629//EN" "http://xml2rfc.tools.ietf.org/authoring/rfc2629.dtd">
+<?xml-stylesheet type='text/xsl' href='https://xml2rfc.ietf.org/authoring/rfc2629.xslt' ?>
+<!DOCTYPE rfc PUBLIC "-//IETF//DTD RFC 2629//EN" "https://xml2rfc.ietf.org/authoring/rfc2629.dtd">
 <!--
   NOTE:  This XML file is input used to produce the authoritative copy of an
   OpenID Foundation specification.  The authoritative copy is the HTML output.
@@ -23,7 +23,7 @@
 
   <front>
     <title abbrev="Mobile App Native SSO">OpenID Connect
-    Native SSO for Mobile Apps 1.0 - draft 07</title>
+    Native SSO for Mobile Apps 1.0 - draft 08</title>
 
     <author fullname="George F. Fletcher" initials="G.F.F." surname="Fletcher">
       <organization abbrev="Capital One">Capital One</organization>
@@ -32,7 +32,7 @@
       </address>
     </author>
 
-    <date day="16" month="January" year="2025" />
+    <date day="9" month="July" year="2026" />
 
     <workgroup>OpenID Connect Working Group</workgroup>
 
@@ -468,8 +468,8 @@
     ...
     client_id=cid_235saw4r4
     &grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Atoken-exchange
-    &audience=https%3A%3F%3Flogin.example.net&subject_token=<id_token>
-    &subject_token_type=urn%3Aietf%3Aparams%3Aoauth%3Atoken-type%3Aid-token
+    &audience=https%3A%2F%2Flogin.example.net&subject_token=<id_token>
+    &subject_token_type=urn%3Aietf%3Aparams%3Aoauth%3Atoken-type%3Aid_token
     &actor_token=95twdf3w4y6wvftw35634t
     &actor_token_type=urn%3Aopenid%3Aparams%3Atoken-type%3Adevice-secret
               ]]></artwork></figure>
@@ -543,7 +543,7 @@
 					  <t hangText="token_type">
 						  <vspace/>
 						  REQUIRED. The value of this parameter MUST be
-						  <spanx style="verb">bearer</spanx>.
+						  <spanx style="verb">Bearer</spanx>.
 					  </t>
 					  <t hangText="expires_in">
 						  <vspace/>
@@ -619,7 +619,7 @@
 			  the Relying Party SHOULD assume that this specification is not
 			  supported. The OpenID Provider MAY provide this metadata parameter even
 			  if it doesn't support the Native SSO for Mobile Apps specification by
-			  including the <spanx style="verb">native_sso_support</spanx> parameter with a
+			  including the <spanx style="verb">native_sso_supported</spanx> parameter with a
 			  value of <spanx style="verb">false</spanx>.
 		  </t>
 	  </section>
@@ -729,12 +729,12 @@
 
   <back>
     <references title="Normative References">
-		<?rfc include="http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2119"?>
-		<?rfc include="http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.6749"?>
-        <?rfc include="http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.7230"?>
-		<?rfc include="http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8252"?>
-		<?rfc include="http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8414"?>
-		<?rfc include="http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8693"?>
+		<?rfc include="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119"?>
+		<?rfc include="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6749"?>
+        <?rfc include="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7230"?>
+		<?rfc include="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8252"?>
+		<?rfc include="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8414"?>
+		<?rfc include="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8693"?>
 
       <reference anchor="OpenID.Core" target="https://openid.net/specs/openid-connect-core-1_0.html">
 	<front>
@@ -857,6 +857,27 @@
 
     <section anchor="History" title="Document History">
       <t>[[ To be removed from the final specification ]]</t>
+
+		<t>
+			-08
+			<list style="symbols">
+				<t>
+					Fixed the percent-encoding of the audience value and corrected the
+					subject_token_type URN (id_token) in the non-normative Token Exchange
+					Request example.
+				</t>
+				<t>
+					Aligned the normative token_type value with the Bearer capitalization
+					used in the example and in RFC 8693.
+				</t>
+				<t>
+					Fixed a reference to the native_sso_supported metadata parameter name.
+				</t>
+				<t>
+					Updated retired xml2rfc.tools.ietf.org URLs to xml2rfc.ietf.org.
+				</t>
+			</list>
+		</t>
 
 		<t>
 			-07
