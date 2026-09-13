@@ -208,7 +208,7 @@
 
 			]]></artwork>
 		</figure>
-		<t>Step [9] invokes the /token endpoint with the token exchange profile
+		<t>Step [9] invokes the token endpoint with the token exchange profile
 			passing the id_token obtained from the shared device storage, the
 			client_id and the device secret.</t>
 		<t>Step [10] returns the SSO generated refresh and access tokens for
@@ -244,9 +244,9 @@
 				  requests a device secret via the <spanx style="verb">device_sso</spanx>
 				  scope and a <spanx style="verb">device_secret</spanx> exists, then
 				  the client MUST provide the <spanx style="verb">device_secret</spanx>
-				  on the request to the /token endpoint to exchange
+				  on the request to the token endpoint to exchange
 				  code for tokens. The client SHOULD provide the
-				  <spanx style="verb">device_secret</spanx> to the /token endpoint
+				  <spanx style="verb">device_secret</spanx> to the token endpoint
 				  during refresh token requests so that the AS may rotate the
           device_secret as necessary.</t>
 			  <t>The exact construction of the <spanx style="verb">device_secret</spanx>
@@ -259,7 +259,7 @@
 			      and <spanx style="verb">refresh_token</spanx> grant types. Support for other
 			      grant types is out of scope for this specification.</t>
 			  <t>This specification defines the following additional
-				  parameter to the /token endpoint for the <spanx style="verb">authorization_code</spanx>
+				  parameter to the token endpoint for the <spanx style="verb">authorization_code</spanx>
 				  and <spanx style="verb">refresh_token</spanx> grant types:
 				  <list style="hanging">
 
@@ -459,7 +459,7 @@
 		  </section>
 		  <section anchor="TXReq" title="Token Exchange Request">
 			  <t>When a mobile app wants to request native SSO (i.e. obtain refresh and access
-				  tokens for an already signed in user) it makes a standard OAuth2 /token
+				  tokens for an already signed in user) it makes a standard OAuth2 token
 				  endpoint request following the profile for Token Exchange defined above.</t>
         <t>The following is a non-normative example</t>
 			  <figure><artwork><![CDATA[
